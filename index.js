@@ -121,4 +121,10 @@ app.get('/user-items/:userId', async (req, res) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
 	console.log(`[Startup] Proxy running on port ${PORT}`);
+
+    if (process.env.NODE_ENV === 'production') {
+		console.log(`[Startup] Environment: production`);
+	} else {
+		console.log(`[Startup] Environment: development`);
+	}
 });
